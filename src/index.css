@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: rgb(27, 27, 26);
+    color: #ffffff;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
+}
+.wrapper {
+    width: 1600px;
+    margin: 50px 100px;
+}
+header{
+    position: relative;
+}
+header .logo {
+    font-weight: 600;
+    font-size: 20px;
+}
+/* Список меню */
+
+header ul.nuv{
+    float: right;
+    list-style: none;
+}
+
+header ul.nuv li {
+    display: inline;
+    margin-left: 25px;
+    cursor: pointer;
+    transition: opacity 500ms ease;
+}
+header ul.nuv li:hover {
+    opacity: 0.5;
+}
+header .shop-cart-button{
+    float: right;
+    cursor: pointer;
+    transition: color 300ms ease;
+}
+header .shop-cart-button:hover,
+header .shop-cart-button.active{
+    color: rgb(165, 39, 39)
+}
+
+header .shop-cart{
+    position: absolute;
+    top: 30px;
+    right: 0;
+    width: 450px;
+    background-color: #173317;
+    z-index: 1000;
+    -webkit-box-shadow: 5px 4px 17px 1px #000000; 
+    box-shadow: 5px 4px 17px 1px #000000;
+    border-radius: 10px;
+
+    padding: 20px;
+    padding-bottom: 0;
+}
+header .shop-cart .item{
+    width: 100%;
+    float: left;
+    margin-bottom: 20px;
+
+}
+header .shop-cart .item img{
+    width: 70px;
+    float: left;
+    margin-right: 20px;
+}
+header .shop-cart .item h2{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+header .shop-cart .item p{
+    color: #333;
+    font-weight: 600;
+}
+
+header .shop-cart .empty h2{
+    font-size:  20px;
+    margin-bottom: 20px;
+}
+
+header .shop-cart .item .delete-icon{
+    color: rgb(163, 57, 57);
+    float: right;
+    position: relative;
+    top: -20px;
+    cursor: pointer;
+    transition: color, transform 300ms ease;
+}
+
+header .shop-cart .item .delete-icon:hover {
+    color: rgb(214, 19, 19);
+    transform: scale(1.5);
+    
+}
+header .shop-cart .summa {
+    float: left;
+    width: 100%;
+    font-weight:  600;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+/* картинка и надпись */
+header .presentation {
+    margin:  50px 0;
+    background: url('./img/_.jpg') no-repeat;
+    width: 100%;
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: multiply;
+    background-color: aquamarine;
+    position: relative;
+}
+
+header .presentation::after{
+    content: 'Лучшие скупка';
+    position: absolute;
+    top: 270px;
+    left: 220px;
+    font-weight: 600;
+    font-size: 50px;
+    color: rgb(32, 22, 22);
+}
+header .presentation::before{
+    content: 'по низким ценам';
+    position: absolute;
+    top: 360px;
+    left: 530px;
+    font-weight: 600;
+    font-size: 40px;
+    color: rgb(255, 255, 255);
+}
+
+/*  */
+
+.categories div{
+    display: inline-block;
+    background: #070707;
+    border-radius: 30px;
+    padding: 10px 20px;
+    margin-bottom: 25px;
+    margin-right: 15px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: all 300ms ease;
+}
+.categories div:hover{
+    border-color: silver;
+    transform: scale(1.1);
+}
+
+
+main{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+main .item{
+    width: 30%;
+    margin-bottom: 50px;
+    background: #83e620c7;
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 20px;
+}
+main .item img,
+.full-item img{
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 300ms ease;
+    cursor: pointer;
+}
+
+main .item img:hover, .full-item img:hover{
+    transform: scale(1.06);
+}
+
+main h2, .full-item h2,
+main p, .full-item p,
+main b, .full-item b {
+    margin: 10px 20px;
+    color: #333;
+    
+}
+
+main b, .full-item b{
+    color: #2b2929;
+}
+main .add-to-cart,
+.full-item .add-to-cart {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    background: rgb(63, 155, 63);
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    border-radius: 10%;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 300;
+    font-size: 23px;
+    transition: transform 300ms ease;
+}
+main .add-to-cart:hover,
+.full-item .add-to-cart:hover {
+    transform: scale(1.5) translateY(-5px);
+}
+
+footer {
+    text-align: center;
+    margin-top: 100px;
+}
+.full-item{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:rgba(0, 0, 0, 0.678);
+    z-index: 9999;
+    overflow: auto;
+}
+.full-item > div {
+    width: 600px;
+    position: relative;
+    margin: 10% auto;
+    padding: 40px 30px;
+    background: #fff;
+    border-radius: 9px;
+}
